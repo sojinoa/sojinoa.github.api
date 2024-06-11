@@ -54,6 +54,6 @@ jobs:
           tags: my-spring-boot-app:latest
 
       - name: Run Docker container
-        uses: docker/cli@v4
+        uses: docker/cli@v2
         with:
           command: run my-spring-boot-app:latest
