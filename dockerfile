@@ -1,11 +1,14 @@
-# Use a base image with Java installed
-FROM openjdk:11-jre-slim
+# Use the official OpenJDK 11 image from the Docker Hub
+FROM openjdk:11-jdk-slim
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the packaged JAR file into the container
-COPY target/demo-0.0.1-SNAPSHOT.jar /app
+# Copy the current directory contents into the container at /app
+COPY src/main/java /app
 
-# Specify the command to run your application
-CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
+# Compile the Java program
+RUN javac Main.java
+
+# Command to run the application
+CMD ["java", "Main"]

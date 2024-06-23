@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/Handler.java",
-      "use": "@vercel/java"
+      "src": "Dockerfile",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/Handler.java"
+      "dest": "/"
     }
   ]
 }
